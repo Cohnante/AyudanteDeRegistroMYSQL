@@ -22,13 +22,17 @@ int main(){
 	
 	int ArraysCantidad[10]={1,2,3,4,5,6,7,8,9,10};
 	
-	int ArraysCodigo[20]={321,465,165,254,470,324,145,651,798,684,521,984,512,105,231,416,785,398,721,594};
-	
 	int ArraysBool[2]={0,1};
 	
 	int ArraysDia[10]={150,160,176,201,145,21,45,780,146,315};
 	
 	int ArraysHora[7]={4,5,6,7,8,3,2};
+	
+	string ArraysCategoria[4]={"Graves","Menos Graves","Leves","Mera Actividad"};
+	
+	string ArraysDelito[3]={"doloso","culposo","preterintencional"};
+	
+	string ArraysCondenasGraves[11]={"Permanente","Superior+5","Inhabilitacion absoluta","inhabilitacion Especial+5","suspension de cargo publico +5","privacion a conducir+8",""};
 	
 	string ArraysFecha[10]={"2014-05-28","2001-12-31","2006-06-21","2019-09-14","2000-05-05","2017-07-07","2013-29-09","2012-07-05","2017-04-07","2016-23-11"};
 	
@@ -44,19 +48,30 @@ int main(){
 		int Id = rand()%(0+10);
 		int Dire=rand()%(0+20);
 		int Cant=rand()%(0+10);
-		int Codigo=rand()%(0+20);
+		int Codigo=rand()%(0+999999999);
 		int Bool=rand()%(0+2);
 		int Tiempo=rand()%(0+10);
 		int Hora=rand()%(0+7);
 		int Apellido=rand()%(0+20);
 		int Fecha= rand()%(0+10);
-		
+		int Cat = rand()%(0+4);
+		int TimeServ= rand()%(0+1825);
+		int Deli=rand()%(0+3);
+		int ConGraves=rand()%(0+11);
+		if(Deli==1){
+				cout<<"insert into Juez values ("<<"'"<<Codigo<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysDelito[Deli]<<"'"<<","<<"'"<<ArraysCondenasGraves[ConGraves]<<"'"<<");"<<endl;	
+		}else if(Deli==2){
+					cout<<"insert into Juez values ("<<"'"<<Codigo<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysDelito[Deli]<<"'"<<","<<"'"<<Deli<<"'"<<");"<<endl;
+		}else if(Deli==3){
+				cout<<"insert into Juez values ("<<"'"<<Codigo<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysDelito[Deli]<<"'"<<","<<"'"<<Deli<<"'"<<");"<<endl;	
+		}
 		/*Impresión de insert 10 veces*/
 		
 		/*cout<<"insert into ContratadosVigilantes values ("<<"'"<<ArraysCodigo[Codigo]<<"'"<<","<<"'"<<ArraysDia[Tiempo]<<"'"<<","<<"'"<<ArraysHora[Hora]<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysApellido[Apellido]<<"'"<<","<<"'"<<ArraysBool[Bool]<<"'"<<");"<<endl;*/
 		//cout<<"insert into Ataques values ("<<"'"<<ArraysCodigo[Codigo]<<"'"<<","<<"'"<<ArraysFecha[Fecha]<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysCantidad[Cant]<<"'"<<");"<<endl;
 		//cout<<"insert into DepartamentoPolicia values ("<<"'"<<ArraysCodigo[Codigo]<<"'"<<","<<"'"<<ArraysDireccion[Dire]<<"'"<<");"<<endl;
-		cout<<"insert into Ataques values ("<<"'"<<ArraysCodigo[Codigo]<<"'"<<","<<"'"<<ArraysFecha[Fecha]<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysCantidad[Cant]<<"'"<<");"<<endl;
+		//cout<<"insert into PersonasDetenidas values ("<<"'"<<Codigo<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysApellido[Apellido]<<"'"<<");"<<endl;
+		//cout<<"insert into Juez values ("<<"'"<<Codigo<<"'"<<","<<"'"<<ArraysNombre[Nombre]<<"'"<<","<<"'"<<ArraysDelito[Deli]<<"'"<<","<<"'"<<ArraysApellido[Apellido]<<"'"<<");"<<endl;
 		
 		
 	}
